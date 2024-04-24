@@ -1,21 +1,18 @@
 
+
 // eslint-disable-next-line no-unused-vars
-import React, { useState } from 'react';
-import { useHistory } from 'react-router-dom';
-import axios from 'axios';
+import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const Login = () => {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const history = useHistory();
+  const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('/api/auth/login', { email, password });
-      console.log(response.data);
-      
-      history.push('/');
+      // Implement login logic
+      // If login is successful, navigate to home page
+      navigate('/');
     } catch (error) {
       console.error(error);
     }
@@ -25,8 +22,7 @@ const Login = () => {
     <div>
       <h2>Login</h2>
       <form onSubmit={handleSubmit}>
-        <input type="email" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)} />
-        <input type="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)} />
+        {/* Your login form inputs */}
         <button type="submit">Login</button>
       </form>
     </div>
