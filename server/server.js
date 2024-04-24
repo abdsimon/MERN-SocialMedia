@@ -1,14 +1,25 @@
 const express = require('express');
-const mongoose =require('mongoose')
-const cors = require('cors');
-require('dotenv').config();
+const connectDB = require('./config/db');
+const authRoutes = require('./routes/authRoutes');
+const postRoutes = require('./routes/postRoutes');
 
 const app = express();
+// Connect Database
+connectDB();
 
-
-app.use(cors());
+// Middleware
 app.use(express.json());
 
-app.listen(process.env.PORT, () => {
-    console.log(`Server is  running on port `, process.env.PORT);
-  });
+// Routes
+app.use('/api/auth', authRoutes);
+app.use('/api/posts', postRoutes);
+
+module.exports = app;
+
+
+const app = require('./app');
+const PORT = process.env.PORT || 4400;
+
+app.listen(PORT, () => {
+  console.log(`Server is running on port ${PORT}`);
+});
