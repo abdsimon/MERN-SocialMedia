@@ -13,7 +13,9 @@ const Login = () => {
     if (email === 'user@example.com' && password === 'password') {
      
       console.log('Logged in successfully');
-    } 
+    } else {
+      setErrorMessage('Invalid email or password');
+    }
   };
 
   return (
