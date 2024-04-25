@@ -20,7 +20,7 @@ const Register = () => {
   return (
     <div>
       <h2>Register</h2>
-      {errorMessage && <div style={{ color: "red" }}>{errorMessage}</div>}
+      {errorMessage && <div className="text-pink-400 hover:text-blue-500">{errorMessage}</div>}
       <form onSubmit={handleSubmit}>
         <div>
           <label htmlFor="email">Email:</label>

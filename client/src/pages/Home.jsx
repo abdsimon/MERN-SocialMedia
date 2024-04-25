@@ -9,7 +9,7 @@ const Home = () => {
   const [posts, setPosts] = useState([]);
   return (
     <div className="p-4 " >
-      <h1 className="text-pink-400 hover:uppercase hover:text-green-600">
+      <h1 className="text-pink-400 hover:uppercase hover:text-blue-800">
         Home
       </h1>
       <PostForm setPosts={setPosts} posts={posts}/>
