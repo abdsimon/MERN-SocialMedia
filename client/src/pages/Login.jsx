@@ -10,7 +10,10 @@ const Login = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     
-  
+    if (email === 'user@example.com' && password === 'password') {
+     
+      console.log('Logged in successfully');
+    } 
   };
 
   return (
