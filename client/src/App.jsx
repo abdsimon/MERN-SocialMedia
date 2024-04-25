@@ -4,7 +4,7 @@ import { Routes, Route } from 'react-router-dom';
 import Home from './pages/Home';
 import Login from './pages/Login';
 import Register from './components/Auth/Register';
-//import PostList from './components/Post/PostList';
+
 
 const App = () => {
   return (
