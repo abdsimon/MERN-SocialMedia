@@ -21,7 +21,7 @@ const Login = () => {
   return (
     <div>
       <h2>Login</h2>
-      {errorMessage && <div style={{ color: 'red' }}>{errorMessage}</div>}
+      {errorMessage && <div className="text-pink-40">{errorMessage}</div>}
       <form onSubmit={handleSubmit}>
         <div>
           <label htmlFor="email">Email:</label>
