@@ -20,8 +20,8 @@ const Login = () => {
 
   return (
     <div>
-      <h2>Login</h2>
-      {errorMessage && <div className="text-pink-400 hover:text-blue-500">{errorMessage}</div>}
+      <h2 className="text-pink-400 hover:text-blue-500">Login</h2>
+      {errorMessage && <div >{errorMessage}</div>}
       <form onSubmit={handleSubmit}>
         <div>
           <label htmlFor="email">Email:</label>
