@@ -1,21 +1,26 @@
 // eslint-disable-next-line no-unused-vars
-import React, { useState } from 'react';
+import React, { useState } from "react";
 
 const Register = () => {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const [confirmPassword, setConfirmPassword] = useState('');
-  const [errorMessage, setErrorMessage] = useState('');
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
+  const [errorMessage, setErrorMessage] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
-   
+
+    if (password !== confirmPassword) {
+      setErrorMessage("Passwords do not match");
+    } else {
+      console.log("Registered successfully");
+    }
   };
 
   return (
     <div>
       <h2>Register</h2>
-      {errorMessage && <div style={{ color: 'red' }}>{errorMessage}</div>}
+      {errorMessage && <div style={{ color: "red" }}>{errorMessage}</div>}
       <form onSubmit={handleSubmit}>
         <div>
           <label htmlFor="email">Email:</label>
