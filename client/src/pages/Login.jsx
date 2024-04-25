@@ -5,11 +5,19 @@ import React, { useState } from 'react';
 const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [errorMessage, setErrorMessage] = useState('');
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    
   
+  };
 
   return (
     <div>
-      
+      <h2>Login</h2>
+      {errorMessage && <div style={{ color: 'red' }}>{errorMessage}</div>}
+      <form onSubmit={handleSubmit}>
         <div>
           <label htmlFor="email">Email:</label>
           <input
@@ -31,7 +39,7 @@ const Login = () => {
           />
         </div>
         <button type="submit">Login</button>
-    
+      </form>
     </div>
   );
 };
