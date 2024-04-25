@@ -4,13 +4,19 @@ import React, { useState } from 'react';
 const Register = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
- 
+  const [confirmPassword, setConfirmPassword] = useState('');
+  const [errorMessage, setErrorMessage] = useState('');
 
- 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+   
+  };
 
   return (
     <div>
-     
+      <h2>Register</h2>
+      {errorMessage && <div style={{ color: 'red' }}>{errorMessage}</div>}
+      <form onSubmit={handleSubmit}>
         <div>
           <label htmlFor="email">Email:</label>
           <input
@@ -31,7 +37,18 @@ const Register = () => {
             required
           />
         </div>
-      
+        <div>
+          <label htmlFor="confirmPassword">Confirm Password:</label>
+          <input
+            type="password"
+            id="confirmPassword"
+            value={confirmPassword}
+            onChange={(e) => setConfirmPassword(e.target.value)}
+            required
+          />
+        </div>
+        <button type="submit">Register</button>
+      </form>
     </div>
   );
 };
