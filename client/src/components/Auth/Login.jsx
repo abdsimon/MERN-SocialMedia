@@ -10,8 +10,7 @@ const Login = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      // Implement login logic
-      // If login is successful, navigate to home page
+     
       navigate('/');
     } catch (error) {
       console.error(error);

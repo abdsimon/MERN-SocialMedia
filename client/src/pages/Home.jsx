@@ -1,14 +1,19 @@
 // eslint-disable-next-line no-unused-vars
-import React from "react";
-import PostList from "../components/Post/PostList";
-import PostForm from "../components/Post/PostForm";
+import {useState} from "react";
+import PostForm from "../components/PostForm";
+import Posts from "../components/Posts";
+
+
 
 const Home = () => {
+  const [posts, setPosts] = useState([]);
   return (
-    <div>
-      <h1>Home</h1>
-      <PostForm />
-      <PostList />
+    <div className="p-4 " >
+      <h1 className="text-pink-400 hover:uppercase hover:text-green-600">
+        Home
+      </h1>
+      <PostForm setPosts={setPosts} posts={posts}/>
+      <Posts posts={posts}/>
     </div>
   );
 };

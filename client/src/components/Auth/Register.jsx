@@ -8,8 +8,7 @@ const Register = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      // Implement registration logic
-      // If registration is successful, navigate to login page
+     
       navigate('/login');
     } catch (error) {
       console.error(error);
