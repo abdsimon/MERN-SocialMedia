@@ -12,10 +12,11 @@ const Home = () => {
     const userLocalStorage = JSON.parse(localStorage.getItem("users"));
 
     if (!userLocalStorage) return navigate("/register");
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
-    <div className="p-4  ">
+    <div className="p-4 bg-neutral-50">
       <PostForm setPosts={setPosts} posts={posts} />
       <Posts posts={posts} />
     </div>

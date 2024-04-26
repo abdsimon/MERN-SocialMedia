@@ -28,7 +28,7 @@ const PostForm = ({ setPosts, posts }) => {
   };
   return (
     <div className="mt-10">
-      <h2>Create Post</h2>
+      <h2 className="py-10">Create Post</h2>
       <form onSubmit={createPost} className="flex gap-4 flex-col">
       
         <div className="flex gap-3 w-full">
@@ -37,7 +37,7 @@ const PostForm = ({ setPosts, posts }) => {
           </label>
           <textarea
             id="title"
-            className="border w-full"
+            className="border w-full bg-neutral-200"
             placeholder="What's on your mind?"
             rows={4}
             name="title"
@@ -49,14 +49,14 @@ const PostForm = ({ setPosts, posts }) => {
             image
           </label>
           <input
-            className="border w-full"
+            className="border w-full bg-neutral-200"
             type="text"
             id="image"
             name="image"
           />
         </div>
 
-        <button className="border  p-2 w-40" type="submit">
+        <button className="border  p-2 w-40 bg-neutral-200" type="submit">
           Post
         </button>
       </form>
