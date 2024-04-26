@@ -18,7 +18,14 @@ const Posts = ({ posts }) => {
 
   return (
     <div>
-      
+      {posts.map((post, index) => (
+        <div key={index}>
+          <Post {...post} index={index} />
+          <p>{post.content}</p>
+          
+          <button onClick={() => handleLike(index)}>{likes[index] ? "Unlike" : "Like"}</button>
+          <p>Likes: {likes[index] ? post.likes + 1 : post.likes}</p>
+        </div>
       ))}
     </div>
   );
