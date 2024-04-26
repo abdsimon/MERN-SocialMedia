@@ -8,7 +8,8 @@ const PostForm = ({ setPosts, posts }) => {
   const createPost = (e) => {
     e.preventDefault();
 
-    if (
+    if (!e.target.title.value) return alert("title not found");
+    if (!e.target.image.value) return alert("image not found");
    
 
     const userLocalStorage = JSON.parse(localStorage.getItem("users"));
