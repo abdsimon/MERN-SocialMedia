@@ -2,12 +2,22 @@
 import React from 'react';
 
 const Profile = () => {
+  
+  const name = 'John Doe';
+  const email = 'john@example.com';
+  const location = 'New York, USA';
+
   return (
     <div>
-      <h1>Profile</h1>
-      <p>This is the profile page. You can customize it with user information, settings, etc.</p>
+      <h2>User Profile</h2>
+      <div>
+        <p><strong>Name:</strong> {name}</p>
+        <p><strong>Email:</strong> {email}</p>
+        <p><strong>Location:</strong> {location}</p>
+      </div>
     </div>
   );
 };
 
 export default Profile;
+

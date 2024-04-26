@@ -1,53 +1,63 @@
-// frontend/src/components/Login.jsx
 // eslint-disable-next-line no-unused-vars
-import React, { useState } from 'react';
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const Login = () => {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const [errorMessage, setErrorMessage] = useState('');
-
+  const navigate = useNavigate();
   const handleSubmit = (e) => {
     e.preventDefault();
-    
-    if (email === 'user@example.com' && password === 'password') {
-     
-      console.log('Logged in successfully');
-    } else {
-      setErrorMessage('Invalid email or password');
-    }
+
+    const userData = {
+      email: e.target.email.value,
+      password: e.target.password.value,
+    };
+
+    const userLocalStorage = JSON.parse(localStorage.getItem("users"));
+
+    if (userData.email !== userLocalStorage.email)
+      return alert("Please register!");
+
+    if (userData.password !== userLocalStorage.password)
+      return alert("wrong password!");
+ // user redierct to home page
+    return navigate("/");
   };
 
   return (
     <div>
-      <h2 className="text-pink-400 hover:text-blue-500">Login</h2>
-      {errorMessage && <div >{errorMessage}</div>}
-      <form onSubmit={handleSubmit}>
-        <div>
-          <label htmlFor="email">Email:</label>
-          <input
-            type="email"
-            id="email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            required
-          />
-        </div>
-        <div>
-          <label htmlFor="password">Password:</label>
-          <input
-            type="password"
-            id="password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            required
-          />
-        </div>
-        <button type="submit">Login</button>
-      </form>
+      <h2 className="text-pink-400 hover:uppercase hover:text-blue-500">
+        Login
+      </h2>
+
+      <div>
+        <form onSubmit={handleSubmit} className="flex flex-col gap-7">
+          <div>
+            <label htmlFor="email">Email:</label>
+            <input
+              className="border"
+              type="email"
+              id="email"
+              name="email"
+              required
+            />
+          </div>
+          <div>
+            <label htmlFor="password">Password:</label>
+            <input
+              className="border"
+              type="password"
+              id="password"
+              name="password"
+              required
+            />
+          </div>
+          <button className="border p-2 w-32" type="submit">
+            Login
+          </button>
+        </form>
+      </div>
     </div>
   );
 };
 
 export default Login;
-

@@ -8,14 +8,15 @@ const PostForm = ({ setPosts, posts }) => {
   const createPost = (e) => {
     e.preventDefault();
 
-    if (!e.target.title.value) return alert("title not found");
-    if (!e.target.image.value) return alert("image not found");
-    if (!e.target.creator.value) return alert("creator not found");
+    if (
+   
+
+    const userLocalStorage = JSON.parse(localStorage.getItem("users"));
+
 
     const data = {
-      avatar:
-        "https://ps.w.org/user-avatar-reloaded/assets/icon-128x128.png?rev=2540745",
-      creator: e.target.creator.value,
+      avatar: userLocalStorage.avatar,
+      creator: userLocalStorage.name,
       title: e.target.title.value,
       image: e.target.image.value,
       likes: 2,
@@ -25,20 +26,10 @@ const PostForm = ({ setPosts, posts }) => {
     e.target.reset();
   };
   return (
-    <div>
+    <div className="mt-10">
       <h2>Create Post</h2>
       <form onSubmit={createPost} className="flex gap-4 flex-col">
-        <div className="flex gap-3 w-full ">
-          <label className="w-20" htmlFor="creator">
-            creator
-          </label>
-          <input
-            className="border w-full"
-            type="text"
-            id="creator"
-            name="creator"
-          />
-        </div>
+      
         <div className="flex gap-3 w-full">
           <label className="w-20" htmlFor="title">
             title
