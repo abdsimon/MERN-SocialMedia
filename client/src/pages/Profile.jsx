@@ -3,7 +3,6 @@ import React from 'react';
 
 const Profile = () => {
   
-  const email = 'john@example.com';
   const location = 'New York, USA';
 
   return (
