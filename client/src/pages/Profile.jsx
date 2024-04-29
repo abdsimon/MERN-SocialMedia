@@ -3,7 +3,6 @@ import React from 'react';
 
 const Profile = () => {
   
-  const location = 'New York, USA';
 
   return (
     <div>
