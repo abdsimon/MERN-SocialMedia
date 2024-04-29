@@ -11,7 +11,9 @@ const Profile = () => {
     <div>
       <h2>User Profile</h2>
       <div>
-       
+        <p><strong>Name:</strong> {name}</p>
+        <p><strong>Email:</strong> {email}</p>
+        <p><strong>Location:</strong> {location}</p>
       </div>
     </div>
   );
