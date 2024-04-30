@@ -22,6 +22,7 @@ export default function Navbar() {
           <Link className="hover:underline  hover:text-pink-400 animate-ping hover:animate-none" to="/register">
             Register
           </Link>
+          <Link>Proflie</Link>
         </li>
       </ul>
     </nav>
