@@ -11,7 +11,7 @@ const UserProfile = () => {
     const timeoutId = setTimeout(() => {
      
       const userData = {
-        name: 'John Doe',
+        name: 'John Doem',
         email: 'john@example.com',
         location: 'New York,k SA',
       
