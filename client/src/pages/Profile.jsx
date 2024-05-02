@@ -12,7 +12,7 @@ const UserProfile = () => {
      
       const userData = {
         name: 'John Doem',
-        email: 'john@example.com',
+        email: 'johna@example.com',
         location: 'New York,kSA',
       
       };
