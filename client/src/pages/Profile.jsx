@@ -35,7 +35,7 @@ const UserProfile = () => {
       <div>
         <p><strong>Name:</strong> {user.name}</p>
         <p><strong>Email:</strong> {user.email}</p>
-        <p><strong>Age:</strong>{}</p>
+        <p><strong>Age:</strong>{user.Age}</p>
         <p><strong>Location:</strong> {user.location}</p>
     
       </div>
