@@ -26,7 +26,7 @@ const UserProfile = () => {
 
  
   if (!user) {
-    return <p>Loading...</p>;
+    return <p>Loading..</p>;
   }
 
   return (
